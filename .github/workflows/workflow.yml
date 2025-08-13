@@ -1,0 +1,12 @@
+name: CI workflow  #Name that will be dispalyed on the Action tab
+
+on:  #tag to add events
+  push:  #this will trigger the workflow
+    branches: ["main"]  #this starts the workflow everytime somebody pushes to the main branch
+  pull_request:  #This will also trigger the workflow
+    branches: ["main"]  #This starts the workflow everytime someone makes a PR on main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+      container: python:3.9-slim
